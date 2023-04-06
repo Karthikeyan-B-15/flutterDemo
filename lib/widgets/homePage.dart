@@ -10,8 +10,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<String> lessons = [
-    'Lesson 1',
-    'Lesson 2',
+    'API',
+    'Images',
     'Lesson 3',
     'Lesson 4',
     'Lesson 5',
