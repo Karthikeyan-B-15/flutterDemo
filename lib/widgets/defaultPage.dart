@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/service/album_service.dart';
 import 'package:flutter_demo/widgets/album.dart';
 import 'package:flutter_demo/widgets/gallery.dart';
+import 'package:flutter_demo/widgets/movies.dart';
 import 'package:http/http.dart' as http;
 
 class DefaultPage extends StatefulWidget {
@@ -39,6 +40,8 @@ class _DefaultPageState extends State<DefaultPage> {
           );
         case 'Images':
           return Gallery();
+        case 'Movies':
+          return Movies();
         default:
           return Center(
             child: Text('Hi there'),
@@ -54,6 +57,8 @@ class _DefaultPageState extends State<DefaultPage> {
           ),
           title: Text(widget.data),
           centerTitle: true,
+          backgroundColor:
+              widget.data == 'Movies' ? Color(0xDD171717) : Colors.blue,
         ),
         body: renderWidget());
   }

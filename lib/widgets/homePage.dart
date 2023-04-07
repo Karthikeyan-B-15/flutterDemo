@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   List<String> lessons = [
     'API',
     'Images',
-    'Lesson 3',
+    'Movies',
     'Lesson 4',
     'Lesson 5',
     'Lesson 6',
