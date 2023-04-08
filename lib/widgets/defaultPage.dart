@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_demo/service/album_service.dart';
 import 'package:flutter_demo/widgets/album.dart';
 import 'package:flutter_demo/widgets/gallery.dart';
@@ -15,7 +16,6 @@ class DefaultPage extends StatefulWidget {
 
 class _DefaultPageState extends State<DefaultPage> {
   late Future<Album> futureAlbum;
-  late Album albumData;
   @override
   void initState() {
     super.initState();
