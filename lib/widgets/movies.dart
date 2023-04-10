@@ -59,7 +59,23 @@ class _MoviesState extends State<Movies> {
                                                     'https://image.tmdb.org/t/p/w500' +
                                                         snapshot.data![index]
                                                             .backdropImage
-                                                            .toString())));
+                                                            .toString(),
+                                                posterUrl:
+                                                    'https://image.tmdb.org/t/p/w500' +
+                                                        snapshot.data![index]
+                                                            .posterImage
+                                                            .toString(),
+                                                ratings: snapshot
+                                                    .data![index].ratings
+                                                    .toDouble(),
+                                                storyLine: snapshot
+                                                    .data![index].storyLine
+                                                    .toString(),
+                                                releaseDate: snapshot
+                                                    .data![index].releaseDate
+                                                    .toString(),
+                                                title: snapshot.data![index].title.toString(),
+                                                id: snapshot.data![index].id)));
                                   },
                                   child: Column(
                                     crossAxisAlignment:
