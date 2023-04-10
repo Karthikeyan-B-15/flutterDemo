@@ -1,11 +1,8 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_demo/service/album_service.dart';
 import 'package:flutter_demo/widgets/album.dart';
 import 'package:flutter_demo/widgets/gallery.dart';
 import 'package:flutter_demo/widgets/movies.dart';
-import 'package:http/http.dart' as http;
 
 class DefaultPage extends StatefulWidget {
   const DefaultPage({super.key, required this.data});
@@ -39,11 +36,11 @@ class _DefaultPageState extends State<DefaultPage> {
             },
           );
         case 'Images':
-          return Gallery();
+          return const Gallery();
         case 'Movies':
-          return Movies();
+          return const Movies();
         default:
-          return Center(
+          return const Center(
             child: Text('Hi there'),
           );
       }
@@ -52,13 +49,13 @@ class _DefaultPageState extends State<DefaultPage> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
+            icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
             onPressed: () => Navigator.of(context).pop(),
           ),
           title: Text(widget.data),
           centerTitle: true,
           backgroundColor:
-              widget.data == 'Movies' ? Color(0xDD171717) : Colors.blue,
+              widget.data == 'Movies' ? const Color(0xDD171717) : Colors.blue,
         ),
         body: renderWidget());
   }

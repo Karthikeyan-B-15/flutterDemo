@@ -28,7 +28,7 @@ class MovieListWidget extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
               color: Color(0xffffffff),
               fontWeight: FontWeight.bold,
               fontSize: 26),
@@ -44,14 +44,10 @@ class MovieListWidget extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => Description(
-                                  bannerUrl: 'https://image.tmdb.org/t/p/w500' +
-                                      movieListData![index]
-                                          .backdropImage
-                                          .toString(),
-                                  posterUrl: 'https://image.tmdb.org/t/p/w500' +
-                                      movieListData![index]
-                                          .posterImage
-                                          .toString(),
+                                  bannerUrl:
+                                      'https://image.tmdb.org/t/p/w500${movieListData![index].backdropImage}',
+                                  posterUrl:
+                                      'https://image.tmdb.org/t/p/w500${movieListData![index].posterImage}',
                                   ratings:
                                       movieListData![index].ratings.toDouble(),
                                   storyLine: movieListData![index]
@@ -72,23 +68,17 @@ class MovieListWidget extends StatelessWidget {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: NetworkImage(cardType == 'banner-card'
-                                      ? 'https://image.tmdb.org/t/p/w500' +
-                                          movieListData![index]
-                                              .backdropImage
-                                              .toString()
-                                      : 'https://image.tmdb.org/t/p/w500' +
-                                          movieListData![index]
-                                              .posterImage
-                                              .toString()),
+                                      ? 'https://image.tmdb.org/t/p/w500${movieListData![index].backdropImage}'
+                                      : 'https://image.tmdb.org/t/p/w500${movieListData![index].posterImage}'),
                                   fit: BoxFit.cover),
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(10)),
-                          margin: EdgeInsets.only(right: 10),
+                          margin: const EdgeInsets.only(right: 10),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Container(
+                        SizedBox(
                           width: width / widthRatio,
                           child: Text(
                             title == 'TV Discover'
@@ -97,7 +87,7 @@ class MovieListWidget extends StatelessWidget {
                                     .originalTitle
                                     .toString(),
                             softWrap: true,
-                            style: TextStyle(color: Color(0xffffffff)),
+                            style: const TextStyle(color: Color(0xffffffff)),
                           ),
                         ),
                       ],
@@ -106,6 +96,5 @@ class MovieListWidget extends StatelessWidget {
         ),
       ],
     );
-    ;
   }
 }

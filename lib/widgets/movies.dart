@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/service/movieService.dart';
-import 'package:flutter_demo/widgets/description.dart';
 import 'package:flutter_demo/widgets/movieListWidget.dart';
 import 'package:flutter_demo/widgets/movieModal.dart';
 
@@ -25,14 +24,13 @@ class _MoviesState extends State<Movies> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
         color: Colors.black,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               FutureBuilder<List<Movie>>(
                   future: futureMovie,
                   builder: (context, snapshot) {
@@ -50,10 +48,9 @@ class _MoviesState extends State<Movies> {
                       return const CircularProgressIndicator();
                     }
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              SizedBox(height: 10),
               FutureBuilder<List<Movie>>(
                   future: futureTrendingMovie,
                   builder: (context, snapshot) {
@@ -71,7 +68,7 @@ class _MoviesState extends State<Movies> {
                       return const CircularProgressIndicator();
                     }
                   }),
-             const SizedBox(height: 10),
+              const SizedBox(height: 10),
               FutureBuilder<List<Movie>>(
                   future: futureTVMovie,
                   builder: (context, snapshot) {
@@ -89,7 +86,7 @@ class _MoviesState extends State<Movies> {
                       return const CircularProgressIndicator();
                     }
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
             ],

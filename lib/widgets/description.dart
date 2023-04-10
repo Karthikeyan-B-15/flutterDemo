@@ -51,7 +51,7 @@ class _DescriptionState extends State<Description> {
             children: [
               Stack(
                 children: [
-                  Positioned(
+                  const Positioned(
                       child: SizedBox(
                     height: 390,
                   )),
@@ -77,58 +77,59 @@ class _DescriptionState extends State<Description> {
                               fit: BoxFit.cover),
                           color: Colors.green,
                           borderRadius: BorderRadius.circular(10)),
-                      margin: EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: 10),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Container(
-                margin: EdgeInsets.only(left: 10),
+                margin: const EdgeInsets.only(left: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       widget.title,
-                      style: TextStyle(color: Colors.white, fontSize: 24),
+                      style: const TextStyle(color: Colors.white, fontSize: 24),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       widget.ratings.toString(),
-                      style: TextStyle(color: Colors.purple, fontSize: 36),
+                      style:
+                          const TextStyle(color: Colors.purple, fontSize: 36),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     StarRating(
                       rating: widget.ratings,
                       color: Colors.purple,
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       widget.releaseDate,
-                      style: TextStyle(color: Colors.white70),
+                      style: const TextStyle(color: Colors.white70),
                     ),
-                    SizedBox(height: 8),
-                    Text(
+                    const SizedBox(height: 8),
+                    const Text(
                       'Story Line',
                       style: TextStyle(
                         color: Colors.white70,
                         fontSize: 24,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(widget.storyLine,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white70,
                           fontSize: 16,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       'Actors',
                       style: TextStyle(color: Colors.white, fontSize: 24),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     FutureBuilder<List<Cast>>(
@@ -153,28 +154,25 @@ class _DescriptionState extends State<Description> {
                                                                 .data![index]
                                                                 .profileImage !=
                                                             null
-                                                        ? 'https://image.tmdb.org/t/p/w500' +
-                                                            snapshot
-                                                                .data![index]
-                                                                .profileImage
-                                                                .toString()
+                                                        ? 'https://image.tmdb.org/t/p/w500${snapshot.data![index].profileImage}'
                                                         : 'https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg'),
                                                     fit: BoxFit.cover),
                                                 color: Colors.green,
                                                 borderRadius:
                                                     BorderRadius.circular(10)),
-                                            margin: EdgeInsets.only(right: 10),
+                                            margin: const EdgeInsets.only(
+                                                right: 10),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
-                                          Container(
+                                          SizedBox(
                                             width: width / 2.5,
                                             child: Text(
                                               snapshot.data![index].name
                                                   .toString(),
                                               softWrap: true,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Color(0xffffffff)),
                                             ),
                                           ),
@@ -220,24 +218,25 @@ class StarRating extends StatelessWidget {
   final double rating;
   final Color color;
 
-  StarRating({this.starCount = 10, this.rating = .0, required this.color});
+  const StarRating(
+      {super.key, this.starCount = 10, this.rating = .0, required this.color});
 
   Widget buildStar(BuildContext context, int index) {
     Icon icon;
     if (index >= rating) {
-      icon = new Icon(
+      icon = const Icon(
         Icons.star_border,
         size: 22,
         color: Colors.purple,
       );
     } else if (index > rating - 1 && index < rating) {
-      icon = new Icon(
+      icon = Icon(
         Icons.star_half,
         size: 22,
         color: color ?? Theme.of(context).primaryColor,
       );
     } else {
-      icon = new Icon(
+      icon = Icon(
         Icons.star,
         size: 22,
         color: color ?? Theme.of(context).primaryColor,
@@ -248,8 +247,8 @@ class StarRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
+    return Row(
         children:
-            new List.generate(starCount, (index) => buildStar(context, index)));
+            List.generate(starCount, (index) => buildStar(context, index)));
   }
 }

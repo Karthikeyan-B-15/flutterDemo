@@ -23,30 +23,31 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Flutter Demo')),
+        appBar: AppBar(title: const Text('Flutter Demo')),
         body: GridView.builder(
-      itemCount: lessons.length,
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => DefaultPage(data: lessons[index])));
+          itemCount: lessons.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DefaultPage(data: lessons[index])));
+              },
+              child: Center(
+                child: Container(
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color(0xFFCBE3F7)),
+                    child: Center(child: Text(lessons[index]))),
+              ),
+            );
           },
-          child: Center(
-            child: Container(
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFCBE3F7)),
-                child: Center(child: Text(lessons[index]))),
-          ),
-        );
-      },
-    ));
+        ));
   }
 }
