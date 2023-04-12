@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/functions/authFunction.dart';
 
-class Day24Authentication extends StatefulWidget {
-  const Day24Authentication({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  _Day24AuthenticationState createState() => _Day24AuthenticationState();
+  SignUpPageState createState() => SignUpPageState();
 }
 
-class _Day24AuthenticationState extends State<Day24Authentication> {
+class SignUpPageState extends State<SignUpPage> {
   final _formkey = GlobalKey<FormState>();
   bool isLogin = false;
   String email = '';
@@ -89,7 +89,7 @@ class _Day24AuthenticationState extends State<Day24Authentication> {
                         if (_formkey.currentState!.validate()) {
                           _formkey.currentState!.save();
 
-                          signup(email, password);
+                          signup(email, password, username);
                         }
                       },
                       child: isLogin ? Text('Login') : Text('Signup'))),
