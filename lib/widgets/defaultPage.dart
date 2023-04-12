@@ -3,6 +3,7 @@ import 'package:flutter_demo/service/album_service.dart';
 import 'package:flutter_demo/widgets/album.dart';
 import 'package:flutter_demo/widgets/gallery.dart';
 import 'package:flutter_demo/widgets/movies.dart';
+import 'package:flutter_demo/widgets/textFieldDemo.dart';
 
 class DefaultPage extends StatefulWidget {
   const DefaultPage({super.key, required this.data});
@@ -39,6 +40,8 @@ class _DefaultPageState extends State<DefaultPage> {
           return const Gallery();
         case 'Movies':
           return const Movies();
+        case 'Text Fields':
+          return const TextFieldDemo();
         default:
           return const Center(
             child: Text('Hi there'),

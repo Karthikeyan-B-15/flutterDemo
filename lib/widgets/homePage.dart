@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     'API',
     'Images',
     'Movies',
-    'Lesson 4',
+    'Text Fields',
     'Lesson 5',
     'Lesson 6',
     'Lesson 7',
