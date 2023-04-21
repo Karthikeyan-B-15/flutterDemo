@@ -3,13 +3,13 @@ import 'dart:ffi';
 class Movie {
   final int id;
   final String? title;
-  final String posterImage;
+  final String? posterImage;
   final String? originalName;
   final String? originalTitle;
   final String? backdropImage;
   final String? storyLine;
   final String? releaseDate;
-  final ratings;
+  final dynamic ratings;
 
   const Movie(
       {required this.id,
