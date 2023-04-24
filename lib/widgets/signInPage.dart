@@ -18,8 +18,9 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,9 @@ class _SignInPageState extends State<SignInPage> {
               ),
               formField(),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 
@@ -90,7 +93,7 @@ class _SignInPageState extends State<SignInPage> {
               height: 20,
             ),
             TextFormField(
-              key: ValueKey('password'),
+              key: const ValueKey('password'),
               decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.lock),
                   border: InputBorder.none,
@@ -120,7 +123,7 @@ class _SignInPageState extends State<SignInPage> {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
 
-                        signin(email, password);
+                        signIn(email, password, context);
                       }
                     },
                     child: const Text(
