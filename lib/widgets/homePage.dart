@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     'Movies',
     'Text Fields',
     'Counter',
-    'Lesson 6',
+    'TODO',
     'Lesson 7',
     'Lesson 8',
     'Lesson 9',

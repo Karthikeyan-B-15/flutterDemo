@@ -6,6 +6,8 @@ import 'package:flutter_demo/widgets/gallery.dart';
 import 'package:flutter_demo/widgets/movies.dart';
 import 'package:flutter_demo/widgets/textFieldDemo.dart';
 
+import '../view/todo.dart';
+
 class DefaultPage extends StatefulWidget {
   const DefaultPage({super.key, required this.data});
   final String data;
@@ -45,6 +47,8 @@ class _DefaultPageState extends State<DefaultPage> {
           return const TextFieldDemo();
         case 'Counter':
           return const CounterExample();
+        case 'TODO':
+          return const TODO();
         default:
           return const Center(
             child: Text('Hi there'),

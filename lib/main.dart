@@ -16,7 +16,7 @@ void main() async {
         debugShowCheckedModeBanner: false,
         title: 'My app', // used by the OS task switcher
         home: SafeArea(
-          child: SignInPage(),
+          child: HomePage(),
         ),
       ),
     ),
