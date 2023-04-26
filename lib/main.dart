@@ -9,16 +9,16 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => Counter(),
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'My app', // used by the OS task switcher
-        home: SafeArea(
-          child: HomePage(),
-        ),
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<Counter>(create: (context) => Counter()),
+    ],
+    child: const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'My app', // used by the OS task switcher
+      home: SafeArea(
+        child: HomePage(),
       ),
     ),
-  );
+  ));
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/service/album_service.dart';
 import 'package:flutter_demo/widgets/album.dart';
 import 'package:flutter_demo/widgets/counter_example.dart';
+import 'package:flutter_demo/widgets/fireStoreExample.dart';
 import 'package:flutter_demo/widgets/gallery.dart';
 import 'package:flutter_demo/widgets/movies.dart';
 import 'package:flutter_demo/widgets/textFieldDemo.dart';
@@ -49,6 +50,8 @@ class _DefaultPageState extends State<DefaultPage> {
           return const CounterExample();
         case 'TODO':
           return const TODO();
+        case 'FireStore':
+          return const FireStoreExample();
         default:
           return const Center(
             child: Text('Hi there'),
